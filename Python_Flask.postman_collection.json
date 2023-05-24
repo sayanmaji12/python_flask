@@ -1,0 +1,612 @@
+{
+	"info": {
+		"_postman_id": "c5f803e6-33f2-4125-9deb-474d4a6f1e48",
+		"name": "Python_Flask",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18906123"
+	},
+	"item": [
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"sayanmaji12@gmail.com\",\n    \"password\":\"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:6055/admin/login",
+							"host": [
+								"localhost"
+							],
+							"port": "6055",
+							"path": [
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\":\"sayanmaji12@gmail.com\",\n    \"password\":\"123456\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:6055/admin/login",
+									"host": [
+										"localhost"
+									],
+									"port": "6055",
+									"path": [
+										"admin",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"message\": \"\",\n    \"response\": {\n        \"created_at\": \"Wed, 10 May 2023 15:40:22 GMT\",\n        \"name\": \"Sayan Maji\",\n        \"user_id\": 1\n    },\n    \"success\": true,\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ0aW1lc3RhbXAiOjE2ODQ5NDY2NTEuNjcxNzM4Nn0.x-ExlNmWupKND5EB-UZQTsvxyxMxqUdG627u60laUpM\"\n}"
+						}
+					]
+				},
+				{
+					"name": "sign_up",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ0aW1lc3RhbXAiOjE2ODQ5NDY2NTEuNjcxNzM4Nn0.x-ExlNmWupKND5EB-UZQTsvxyxMxqUdG627u60laUpM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \n    \"user_id\":1,\n    \"name\":\"Sayan\",\n    \"email\":\"sayan@quantumgrowth.ai\",\n    \"password\":\"12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:6055/admin/sign_up",
+							"host": [
+								"localhost"
+							],
+							"port": "6055",
+							"path": [
+								"admin",
+								"sign_up"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{   \n    \"user_id\":1,\n    \"name\":\"Sayan\",\n    \"email\":\"sayan@quantumgrowth.ai\",\n    \"password\":\"12345\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:6055/admin/sign_up",
+									"host": [
+										"localhost"
+									],
+									"port": "6055",
+									"path": [
+										"admin",
+										"sign_up"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/2.2.2 Python/3.8.10"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 May 2023 16:45:51 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "85"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"\",\n    \"response\": \"User registered successfully\",\n    \"success\": true\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "employee",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"sayan@quantumgrowth.ai\",\n    \"password\":\"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:6055/employee/login",
+							"host": [
+								"localhost"
+							],
+							"port": "6055",
+							"path": [
+								"employee",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\":\"sayan@quantumgrowth.ai\",\n    \"password\":\"12345\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:6055/employee/login",
+									"host": [
+										"localhost"
+									],
+									"port": "6055",
+									"path": [
+										"employee",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/2.2.2 Python/3.8.10"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 May 2023 16:47:03 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "303"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"\",\n    \"response\": {\n        \"created_at\": \"Wed, 24 May 2023 22:15:44 GMT\",\n        \"name\": \"Sayan\",\n        \"user_id\": 2\n    },\n    \"success\": true,\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJ0aW1lc3RhbXAiOjE2ODQ5NDY4MjMuNjcxMTA5fQ.gEu1li5xhWhuYIePTwyLjU9KsXBGj3vUq-BtUxYR4gM\"\n}"
+						}
+					]
+				},
+				{
+					"name": "forgetPass",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"sayan@quantumgrowth.ai\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:6055/employee/forgetPass",
+							"host": [
+								"localhost"
+							],
+							"port": "6055",
+							"path": [
+								"employee",
+								"forgetPass"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\":\"sayan@quantumgrowth.ai\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:6055/employee/forgetPass",
+									"host": [
+										"localhost"
+									],
+									"port": "6055",
+									"path": [
+										"employee",
+										"forgetPass"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/2.2.2 Python/3.8.10"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 May 2023 16:47:51 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "117"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Otp sent successfully\",\n    \"response\": {\n        \"otp\": \"5719\",\n        \"user_id\": 2\n    },\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "resetPassword",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"otp\": \"5719\",\n    \"user_id\": 2,\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:6055/employee/resetPassword",
+							"host": [
+								"localhost"
+							],
+							"port": "6055",
+							"path": [
+								"employee",
+								"resetPassword"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"otp\": \"5719\",\n    \"user_id\": 2,\n    \"password\": \"123456\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:6055/employee/resetPassword",
+									"host": [
+										"localhost"
+									],
+									"port": "6055",
+									"path": [
+										"employee",
+										"resetPassword"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/2.2.2 Python/3.8.10"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 May 2023 16:48:49 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "84"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Reset password successfully\",\n    \"response\": \"\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "Upload image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJ0aW1lc3RhbXAiOjE2ODQ5NDY5ODkuNzk5NzYzNH0.ILlW4i0UU4QMJ6sUl3VHk4Snxz1cM8cM5yRubGeKucM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/home/ubuntu/Downloads/WhatsApp Image 2023-04-14 at 9.32.28 PM.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:6055/employee/upload",
+							"host": [
+								"localhost"
+							],
+							"port": "6055",
+							"path": [
+								"employee",
+								"upload"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/home/ubuntu/Downloads/WhatsApp Image 2023-04-14 at 9.32.28 PM.jpeg"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:6055/employee/upload",
+									"host": [
+										"localhost"
+									],
+									"port": "6055",
+									"path": [
+										"employee",
+										"upload"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/2.2.2 Python/3.8.10"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 May 2023 16:53:26 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "100"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"File uploaded successfully!\",\n    \"response\": \"1684947206.jpeg\",\n    \"success\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJ0aW1lc3RhbXAiOjE2ODQ5NDY5ODkuNzk5NzYzNH0.ILlW4i0UU4QMJ6sUl3VHk4Snxz1cM8cM5yRubGeKucM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\":2,\n    \"profile_img\":\"1684947206.jpeg\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:6055/employee/update_image",
+							"host": [
+								"localhost"
+							],
+							"port": "6055",
+							"path": [
+								"employee",
+								"update_image"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\":2,\n    \"profile_img\":\"1684947206.jpeg\"\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:6055/employee/update_image",
+									"host": [
+										"localhost"
+									],
+									"port": "6055",
+									"path": [
+										"employee",
+										"update_image"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/2.2.2 Python/3.8.10"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 May 2023 16:55:33 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "83"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"\",\n    \"response\": \"Image updated successfully\",\n    \"success\": true\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
