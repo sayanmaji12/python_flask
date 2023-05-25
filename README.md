@@ -6,7 +6,7 @@
    - pip3 install pymysql
    - pip3 install pip3 install json-encoder
    - pip3 install requests
-   - pip install PyJWT
+   - pip3 install PyJWT
 
 # Database
 ## import database
