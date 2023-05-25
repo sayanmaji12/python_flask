@@ -25,9 +25,10 @@ def login():
                 del active_tokens[getUser['user_id']]
 
             token = jwt.encode({'user_id': getUser['user_id'],"timestamp":time.time()}, os.getenv('SECRET_KEY'), algorithm='HS256')
-            active_tokens[getUser['user_id']] = token.decode('utf-8')
+            print(token)
+            active_tokens[getUser['user_id']] = token
 
-            return jsonify({"success": True, "response": getUser,'token': token.decode('utf-8'), "message": ""})
+            return jsonify({"success": True, "response": getUser,'token': token, "message": ""})
         else:
             return jsonify({"success": False, "response": '', "message": "Your email or password is incorrect"})
     except Exception as e:
@@ -41,8 +42,9 @@ def sign_up():
     if token:
         try:
             token = token.split()[1]
+            print(token)
             # Decode the token and verify its authenticity
-            payload = jwt.decode(token, os.getenv('SECRET_KEY'), algorithm='HS256')
+            payload = jwt.decode(token, os.getenv('SECRET_KEY'), algorithms='HS256')
             
             user_id = payload['user_id']
 

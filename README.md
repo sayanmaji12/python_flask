@@ -4,7 +4,9 @@
    - pip3 install flask_cors
    - pip3 install python-dotenv
    - pip3 install pymysql
-   - pip3 install hashlib
+   - pip3 install pip3 install json-encoder
+   - pip3 install requests
+   - pip install PyJWT
 
 # Database
 ## import database

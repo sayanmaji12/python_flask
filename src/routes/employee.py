@@ -29,9 +29,9 @@ def login():
                 del active_tokens[getUser['user_id']]
 
             token = jwt.encode({'user_id': getUser['user_id'],"timestamp":time.time()}, os.getenv('SECRET_KEY'), algorithm='HS256')
-            active_tokens[getUser['user_id']] = token.decode('utf-8')
+            active_tokens[getUser['user_id']] = token
 
-            resp = jsonify({"success": True, "response": getUser,'token': token.decode('utf-8'), "message": ""})
+            resp = jsonify({"success": True, "response": getUser,'token': token, "message": ""})
         else:
             resp = jsonify({"success": False, "response": '', "message": "Your email or password is incorrect"})
     except Exception as e:
@@ -92,7 +92,7 @@ def upload_file():
             print(__location__)
             token = token.split()[1]
             # Decode the token and verify its authenticity
-            payload = jwt.decode(token, os.getenv('SECRET_KEY'), algorithm='HS256')
+            payload = jwt.decode(token, os.getenv('SECRET_KEY'), algorithms='HS256')
             
             user_id = payload['user_id']
 
@@ -131,7 +131,7 @@ def update_image():
         try:
             token = token.split()[1]
             # Decode the token and verify its authenticity
-            payload = jwt.decode(token, os.getenv('SECRET_KEY'), algorithm='HS256')
+            payload = jwt.decode(token, os.getenv('SECRET_KEY'), algorithms='HS256')
             
             user_id = payload['user_id']
 
